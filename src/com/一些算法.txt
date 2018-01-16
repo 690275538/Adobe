@@ -1,0 +1,74 @@
+﻿
+
+递归函数
+	
+	private function getName(xml:*, obj:Object = null):void
+{
+	var xmlList:XMLList = xml.children() as XMLList;
+	trace(xmlList.length())
+	if (xmlList.length() > 1)
+	{
+		obj[xml.name()] = {};
+		for each (var item:*in xmlList)
+		{
+			getName(item, obj[xml.name()]);
+		}
+	}
+	else
+	{
+		if (xmlList[0])
+			if ((xmlList[0] as XML).children().length())
+			{
+				obj[xml.name()] = {};
+				getName(xmlList[0], obj[xml.name()]);
+				return;
+			}
+		obj[xml.name()] = xml.toString();
+	}
+}
+
+
+ 关于 一张大图放入一个小容器 里 的 scale  算法 
+ 
+ 
+ 大图的scaleX= 小图的wid/大图的wid;
+ 大图的scaleY= 小图的hei/大图的hei;
+
+
+ 滚动条的 算法   坐标都是  从 0,0  点 算起
+ 
+ 
+ 
+ 大图.y =  ( 图片显示区域的hei-图片的hei ) *滑动块的y/  ( 滑动块bg的 hei-  滑动块的 hei  )
+ 大图.x =  ( 图片显示区域的wid-图片的wid ) *滑动块的y/  ( 滑动块bg的 wid-  滑动块的 wid  )
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

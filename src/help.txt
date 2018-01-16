@@ -1,0 +1,77 @@
+﻿
+
+com.antLine   蚂蚁线
+
+com.anttikupila   2015.7.4 音乐频谱 
+用法      
+	import com.anttikupila.revolt.Revolt;
+	var revolt:Revolt = new Revolt("1.mp3", 500, 300);
+	addChild(revolt);
+	
+com.badTvSignal   模仿电视被干扰效果   2014.10.12
+
+com.coolDown   扇形冷却倒计时类
+
+com.DateConvert  时钟转换类 00:00:03
+
+com.deng     解压zip  
+
+com.foed    未知
+
+com.greensock      缓动类
+
+com.hanziTopinyin   汉字转换成拼音
+
+com.HitTest  碰撞检测类
+
+com.ldEasyNape    拉登大叔的 nape 教程
+
+com.mosesSupposes  透明区域按钮  (直接继承他就好)
+
+com.pathfinding   寻路类 
+
+com.photoClip    图片碎片排列   IphoneTween  苹果版缓动效果   2014.10.12
+
+com.ripple     水波纹效果类
+
+com.soundManage   声音管理类
+
+com.transition     场景过渡类    接收的参数是  MovieClip
+
+StringTool    2015.1.5
+
+jp  加载jpg照片 旋转角度的问题
+	用法
+	var exifLoader:ExifLoader=new ExifLoader();
+	exifLoader.addEventListener(Event.COMPLETE,exifLoaderComplete);
+	exifLoader.load(new URLRequest(url));
+	 function exifLoaderComplete(event:Event):void
+		{
+			addChild(exifLoader);
+			trace(exifLoader.exif.ifds.primary.Orientation,"相机的方向值");
+		}
+	//旋转角度rotation（1旋转0°，6顺时针90°，8逆时针90°，3旋转180°）
+	switch(rotation)
+	{
+		case "1":
+		{
+			break;
+		}
+		case "6":
+		{
+			shapes.rotation=90;
+			break;
+		}case "8":
+		{
+			shapes.rotation=-90;
+			break;
+		}case "3":
+		{
+			shapes.rotation=180;
+			break;
+		}
+		default:
+		{
+			break;
+		}
+	}
